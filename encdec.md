@@ -356,7 +356,7 @@ So in summary, while the JCE provides AES-GCM, you will likely need to add exter
 
 
 Is there any support for AES-GCM Encryption and Decryption and password hashing algorithms (BCrypt/Argon2) when using Nodejs.
-----------------------------------------------------------------------------------------------------------------------------
+
 
 Yes, there is good support for using AES-GCM encryption/decryption and password hashing like BCrypt/Argon2 in Node.js applications.
 
@@ -385,7 +385,7 @@ So in summary, AES-GCM and modern password hashing libraries are readily availab
 
 
 What is saltRounds with value of "10" passed in the above code?
---------------------------------------------------------------'
+
 Good question! The saltRounds parameter provided to the bcrypt.hash() method controls the complexity of the hashing algorithm for added protection against brute force attacks.
 
 Specifically:
