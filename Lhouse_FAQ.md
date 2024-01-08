@@ -21,7 +21,7 @@ Hybrid
 - Overall, direct access from web apps is possible for some use cases, but often pairing the data lakehouse with scalable query engines, caches, indexes, and modern data warehouses can combine the benefits of scalable storage and fast analytics. 
 - The best solution depends on your specific performance needs, data volumes, and query patterns.
 
-What use-cases tend to be favorable for consuming from data lake house directly and others by using a intermediate data store.  Can you provide examples /scenarios to illustrate that. 
+# What use-cases tend to be favorable for consuming from data lake house directly and others by using a intermediate data store.  Can you provide examples /scenarios to illustrate that. 
 
 Consuming data directly from a data lakehouse is favorable when:
 
@@ -67,7 +67,7 @@ Spread load, avoid resource contention
 
 
 
-
+# How does the Gold Layer in Mediallion Architectere pattern compare with that of using intermediate storage layer.
 - In the Medallion architecture pattern, the GOLD layer indeed represents the curated and transformed data. 
 - While a data lakehouse typically leverages cloud storage for its underlying storage layer, the decision to have another intermediate storage for serving web consumers depends on several factors:
 Performance Optimization
@@ -97,7 +97,7 @@ Some reasons you may still want an intermediate serving layer between the data l
 While the GOLD layer serves as the authoritative source of curated data in the Medallion architecture, introducing an intermediate storage layer for web consumers can help optimize performance, enforce specific structures, and provide additional control over data access and security. The decision ultimately depends on the specific requirements and characteristics of your web applications.
 
 
-I am concerned about keeping the data in sync between GOLD layer and intermediate Storage to avoid stale data and also about latency.  What approaches can i follow to mitigate that. 
+# I am concerned about keeping the data in sync between GOLD layer and intermediate Storage to avoid stale data and also about latency.  What approaches can i follow to mitigate that. 
 
 
 To mitigate concerns about keeping data in sync between the GOLD layer and intermediate storage, as well as addressing latency issues, consider the following approaches:
@@ -140,7 +140,7 @@ Continuously monitor staleness/lag between the systems
 
 
 
-Can I use open source frameworks like iceberg, hudi or delta layer to create a transactional storage layer over S3 data. 
+# Can I use open source frameworks like iceberg, hudi or delta layer to create a transactional storage layer over S3 data. 
 
 - Yes, you can use open-source frameworks like Apache Iceberg, Apache Hudi, or Delta Lake to create a transactional storage layer over data stored in Amazon S3. 
 - These frameworks are designed to bring ACID transactional capabilities to large-scale, distributed data lakes, making them suitable for scenarios where you need consistency, isolation, durability, and atomicity in your data operations.
@@ -156,7 +156,7 @@ Delta Lake is an open-source storage layer that brings ACID transactions to Apac
 - When using these frameworks with data stored on S3, they typically provide mechanisms to manage metadata, handle transactions, and enable efficient operations on large-scale datasets. However, keep in mind that each framework has its own strengths, features, and trade-offs, so you should evaluate them based on your specific use case, requirements, and familiarity with the tools.
 - Ensure that you check the documentation and compatibility of these frameworks with the specific versions of the storage layer you intend to use, as updates and new features may be introduced over time.
 
-When using AWS are there any managed services which can make using these frameworks easier
+# When using AWS are there any managed services which can make using these frameworks easier
 
  AWS offers managed services that can simplify the usage of frameworks like Apache Iceberg, Apache Hudi, or Delta Lake, especially in the context of data lakes stored on Amazon S3. 
 AWS Glue
@@ -177,7 +177,7 @@ AWS Lake Formation
 When using these managed services, you may need to configure your environment and jobs to work with the specific storage formats and frameworks you choose. 
 
 
-How can I use delta lake with AWS glue. 
+# How can I use delta lake with AWS glue. 
 
 Using Delta Lake with AWS Glue involves configuring and executing AWS Glue jobs that interact with Delta tables stored in Amazon S3. 
 Here are general steps to guide you through the process:
@@ -224,7 +224,7 @@ Ensure that your Delta Lake version is compatible with the Spark version used by
 
 
 
-How do i setup Delta lake in AWS S3.
+# How do i setup Delta lake in AWS S3.
 
 - Setting up Delta Lake on AWS S3 involves configuring your environment to store and manage Delta tables. 
 Here are the general steps to guide you through the process:
@@ -328,7 +328,7 @@ Here's how you can use AWS Glue for initializing, reading, and modifying Delta L
 While AWS Glue may not directly support the initialization of Delta tables, you can use the Databricks Delta Lake APIs or tools like `delta-import` to initialize a Delta table, and then AWS Glue can be used for subsequent ETL operations.
 
 
-How can I use Databricks Delta Lake APIs in AWS Glue Job to initialize delta tables. 
+# How can I use Databricks Delta Lake APIs in AWS Glue Job to initialize delta tables. 
 
 - Using Databricks Delta Lake APIs in an AWS Glue job involves configuring the Glue job to leverage the necessary Delta Lake libraries and making use of PySpark code to interact with Delta tables. 
 
@@ -429,7 +429,7 @@ DeltaTable.forPath(spark, "s3://bucket/delta-table").setProperty("description", 
 
 So in summary, import Delta Lake libraries, use the DataFrameWriter to write in Delta format, and configure DeltaTable properties to initialize a new Delta Lake table from a Glue ETL job. This creates an empty Delta table with schema ready for inserting data.
 
-What is AWS Glue DynamicFrame and how does it differ from pyspark dataframe. 
+# What is AWS Glue DynamicFrame and how does it differ from pyspark dataframe. 
 
 
 - AWS Glue DynamicFrame and PySpark DataFrame are both abstractions used in the context of AWS Glue ETL (Extract, Transform, Load) jobs. Here's a brief overview of each:
@@ -505,7 +505,7 @@ Language
 In summary, Glue DynamicFrames provide a highly optimized data structure for ETL on nested, semi-structured data while Spark DataFrames are more general purpose and provide a wider range of data processing capabilities.
 
 
-Can you provide code examples to illustrate the differences between  AWS Glue DynamicFrames and PySpark DataFrames and also the provide details on choosing one over the other. 
+# Can you provide code examples to illustrate the differences between  AWS Glue DynamicFrames and PySpark DataFrames and also the provide details on choosing one over the other. 
 
 
 Certainly! Let's start with code examples illustrating the differences between AWS Glue DynamicFrames and PySpark DataFrames:
@@ -627,7 +627,7 @@ DynamicFrames are Python-only while DataFrames are available in both Python and 
 So in summary, DynamicFrames are tailored for ETL while DataFrames are more general purpose. Using both together combines their strengths.
 
 
-Can you provide examples to illustrate how Glue DynamicFrames support schema evolution/schema flexibility.
+# Can you provide examples to illustrate how Glue DynamicFrames support schema evolution/schema flexibility.
 - Schema evolution and flexibility are crucial aspects of handling data with varying structures over time. 
 - AWS Glue DynamicFrames provide convenient ways to handle schema evolution. 
 
@@ -724,7 +724,7 @@ This allows leveraging DataFrames for structured analysis if needed.
 
 So in summary, DynamicFrames provide a schema-on-read nested data model that easily handles schema changes across sources and over time.
 
-Can't we also achieve the same using PySpark DataFrames. 
+# Can't we also achieve the same using PySpark DataFrames. 
 
 - Absolutely! PySpark DataFrames also support schema evolution, and you can achieve similar results using PySpark. Let's modify the previous example to demonstrate schema evolution with PySpark DataFrames:
 
@@ -866,7 +866,7 @@ Since. PySpark DataFrames supports same functionality , i am not sure why would 
 - In summary, while PySpark DataFrames offer a standard and versatile interface, AWS Glue DynamicFrames are tailored for AWS Glue environments, providing additional abstractions and ease of use. The decision ultimately depends on the specific requirements and context of your data processing tasks.
 
 
-Is there any support for using Apache iceberg with EMR pyspark to initialize iceberg tables,  read and modify iceberg table data. 
+# Is there any support for using Apache iceberg with EMR pyspark to initialize iceberg tables,  read and modify iceberg table data. 
 
 
 -  EMR (Amazon Elastic MapReduce) supports Apache Iceberg with PySpark. However, keep in mind that features and supported versions may have evolved since then, so it's essential to check the latest AWS EMR documentation for the most accurate information.
