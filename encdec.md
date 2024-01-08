@@ -310,8 +310,8 @@ So the key points:
 This ensures the data is properly encrypted using the key protected by the password. Thank you for catching that missed integration! Please let me know if you have any other questions.
 
 
-Do we need to add any llbraries as dependency for the AES-GCM and password hashing algorithms (BCrypt/Argon2) code to work.
----------------------------------------------------------------------------------------------------------------------------
+# Do we need to add any llbraries as dependency for the AES-GCM and password hashing algorithms (BCrypt/Argon2) code to work.
+
 
 Yes, you will likely need to add some dependencies to use AES-GCM encryption and password hashing libraries like BCrypt or Argon2 in Java.
 
@@ -355,8 +355,7 @@ And in Maven:
 So in summary, while the JCE provides AES-GCM, you will likely need to add external libraries for Argon2 and BCrypt to work properly in Java.
 
 
-Is there any support for AES-GCM Encryption and Decryption and password hashing algorithms (BCrypt/Argon2) when using Nodejs.
-
+# Is there any support for AES-GCM Encryption and Decryption and password hashing algorithms (BCrypt/Argon2) when using Nodejs.
 
 Yes, there is good support for using AES-GCM encryption/decryption and password hashing like BCrypt/Argon2 in Node.js applications.
 
@@ -384,7 +383,7 @@ const hashPassword = async (password) => {
 So in summary, AES-GCM and modern password hashing libraries are readily available for Node.js via native modules or NPM packages. They can be easily integrated to build secure applications.
 
 
-What is saltRounds with value of "10" passed in the above code?
+# What is saltRounds with value of "10" passed in the above code?
 
 Good question! The saltRounds parameter provided to the bcrypt.hash() method controls the complexity of the hashing algorithm for added protection against brute force attacks.
 
@@ -407,8 +406,8 @@ The recommended value today for bcrypt is around 10-14 rounds depending on your 
 
 So in short, the saltRounds parameter ups the intentional computing difficulty to protect hashed passwords against future brute force attacks.
 
-Is there something similar to saltRounds when using nodejs Argon2 module instead of BCrypt.
--------------------------------------------------------------------------------------------
+# Is there something similar to saltRounds when using nodejs Argon2 module instead of BCrypt.
+
 Yes, the Argon2 password hashing algorithm used in Node.js also supports setting the number of rounds or iterations to compute the hash, similar to the saltRounds parameter in bcrypt.
 
 In the Node.js argon2 module, the primary parameters you can set are:
