@@ -1,4 +1,4 @@
-#What is AES GCM Encryption and Decryption?
+What is AES GCM Encryption and Decryption?
 
 AES-GCM is an encryption and authentication mode that combines the Advanced Encryption Standard (AES) block cipher with the Galois/Counter Mode (GCM) authentication mechanism. Here are the key points about how it works:
 
