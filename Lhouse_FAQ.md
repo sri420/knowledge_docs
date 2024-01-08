@@ -1,5 +1,5 @@
 
-Can Web Apps Consume Data Directly from a Data Lakehouse? Should we first copy the data to a relational or NoSQL data store before making the web apps consume the data from there?
+#Can Web Apps Consume Data Directly from a Data Lakehouse? Should we first copy the data to a relational or NoSQL data store before making the web apps consume the data from there?
 
 
 - Web apps can consume data directly from a data lakehouse, eliminating the need for an intermediate data store. This approach leverages the flexibility and scalability of data lakehouses, allowing web apps to access and analyze diverse data without additional copies. However, the choice depends on specific use cases, performance requirements, and the capabilities of your web app framework.
