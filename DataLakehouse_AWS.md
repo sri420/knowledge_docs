@@ -1,6 +1,6 @@
 Here is one approach to creating a data lakehouse on AWS:
 
-**Object Storage** a
+**Object Storage**
 
 Use Amazon S3 to store structured, semi-structured, and unstructured data in open formats like Parquet, ORC, JSON. S3 provides virtually unlimited scalable storage.
 
