@@ -1,4 +1,4 @@
-What is dimensional modelling.  Is it used in design of datawarehouse models. 
+# What is dimensional modelling.  Is it used in design of datawarehouse models. 
 
 - Dimensional modeling is a data modeling technique used in the design of data warehouses and data marts.
 -  It is specifically tailored for efficient querying and reporting, providing a structure that simplifies the process of retrieving and analyzing large volumes of data. 
@@ -171,7 +171,7 @@ GROUP BY
 
 In practice, the choice between normalized and denormalized models depends on the specific requirements of the analytics and reporting workload and the characteristics of the data warehouse.
 
-Is the above example based on star schema
+# Is the above example based on star schema
 
 Yes, the example provided is based on the star schema in dimensional modeling. Let's break down how the example aligns with the star schema:
 
@@ -214,7 +214,7 @@ In the star schema:
 
 This structure simplifies queries and enhances performance by minimizing the number of joins required for analytical reporting. Each dimension table is directly linked to the fact table, forming a star-like pattern, which is a characteristic of the star schema in dimensional modeling.
 
-Is snowflake schema same as star schema 
+# Is snowflake schema same as star schema 
 
 No, the snowflake schema and star schema are not the same, although they share similarities in organizing data in a data warehouse. Both are dimensional modeling techniques used to structure tables and relationships within a data warehouse, but they have distinct characteristics.
 
@@ -281,7 +281,7 @@ In a snowflake schema, each level of normalization results in additional tables,
 In summary, the main difference lies in the structure and normalization level of dimension tables. The star schema is generally simpler, while the snowflake schema involves a more normalized and structured hierarchy of dimensions. The choice between them depends on the specific requirements of the data warehouse and the trade-offs between simplicity and normalization benefits.
 
 
-How to ingest continuous stream of data a source and process them using Redshift? 
+# How to ingest continuous stream of data a source and process them using Redshift? 
 
 Amazon Redshift is a data warehouse service that is optimized for high-performance analysis using SQL queries. While Redshift is not designed for real-time data streaming or processing, you can still ingest continuous streams of data into Redshift by following a batch processing approach. Here's a general outline of the process:
 
@@ -338,7 +338,7 @@ Amazon Redshift is a data warehouse service that is optimized for high-performan
 
 While Redshift might not be the ideal choice for real-time processing, it is powerful for complex analytical queries on large datasets, making it suitable for many business intelligence and reporting scenarios.
 
-What if we used snowflake instead of redshift for continuous ingestion of data,  what would be the difference.
+# What if we used snowflake instead of redshift for continuous ingestion of data,  what would be the difference.
 
 If you were to use Snowflake instead of Redshift for continuous ingestion of data, there would be several differences in terms of architecture, data loading mechanisms, and certain operational aspects. Here are key considerations:
 
@@ -409,7 +409,7 @@ If you were to use Snowflake instead of Redshift for continuous ingestion of dat
 
 Both Redshift and Snowflake are robust data warehousing solutions, and the choice between them depends on factors such as your specific requirements, existing ecosystem, and preferences for managing infrastructure and operations.
 
-Do we need to use cloud-based storage like S3 to ingest and stage the streaming data before moving it to Redshift?
+# Do we need to use cloud-based storage like S3 to ingest and stage the streaming data before moving it to Redshift?
 
 
 Yes, using cloud-based storage like Amazon S3 as an intermediate staging area is a common and recommended practice when ingesting and processing streaming data before moving it to Amazon Redshift. Here's a typical flow of how this process works:
@@ -471,7 +471,7 @@ Yes, using cloud-based storage like Amazon S3 as an intermediate staging area is
 
 This architecture provides flexibility, durability, and optimized loading when moving streaming data into Amazon Redshift from an intermediate staging area in Amazon S3.
 
-If instead of Redshift, we use Snowflake, should we still ingest and store the continuous streaming data in S3 and then move it to Snowflake?
+# If instead of Redshift, we use Snowflake, should we still ingest and store the continuous streaming data in S3 and then move it to Snowflake?
 
 Yes, the general approach of ingesting and storing continuous streaming data in an intermediate storage layer, such as Amazon S3, before moving it to a data warehouse like Snowflake, is applicable and often recommended. Here's how the process might work with Snowflake:
 
@@ -533,7 +533,7 @@ Yes, the general approach of ingesting and storing continuous streaming data in 
 
 While the specific details of the commands and tools may vary between Redshift and Snowflake, the overall architecture of using an intermediate staging area remains a best practice for handling continuous streaming data before loading it into a data warehouse.
 
-Do you mean even if we use Snowpipes to ingest continuous data, we still have to use S3 to first stage the data?
+# Do you mean even if we use Snowpipes to ingest continuous data, we still have to use S3 to first stage the data?
 
 I apologize for any confusion. When using Snowflake Snowpipe for continuous data ingestion, you don't necessarily need to use an external staging area like Amazon S3. Snowpipe itself can utilize an internal stage within Snowflake to manage the staging of data before loading it into tables.
 
@@ -589,7 +589,7 @@ Here's how the process typically works with Snowpipe:
 
 Using Snowpipe with an internal stage in Snowflake allows you to achieve a streamlined and automated process for continuous data ingestion and loading without necessarily relying on an external staging area like Amazon S3. However, the choice may depend on your specific use case, data volume, and preferences in terms of storage and data management.
 
-What is the difference between internal stage and external stage when using Snowpipe?
+# What is the difference between internal stage and external stage when using Snowpipe?
 
 In Snowflake, a stage is a location where data files are stored for loading into or unloading from Snowflake tables. When using Snowpipe for continuous data ingestion, you can choose to use either an internal stage or an external stage. Here are the key differences between the two:
 
@@ -647,7 +647,7 @@ In Snowflake, a stage is a location where data files are stored for loading into
 
 Both internal and external stages are valid options when working with Snowpipe for continuous data ingestion. The choice between them depends on factors such as ease of use, integration with existing storage, data independence, and cost considerations. Snowflake provides flexibility to accommodate different storage preferences.
 
-What are the different approaches to consume data from snowflake and when should we use each of them. 
+# What are the different approaches to consume data from snowflake and when should we use each of them. 
 
 Consuming data from Snowflake involves various approaches depending on the use case, data volume, latency requirements, and the tools or applications involved. Here are some common approaches to consume data from Snowflake:
 
