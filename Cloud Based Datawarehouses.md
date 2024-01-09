@@ -448,3 +448,44 @@ There are a couple ways BigQuery can incrementally ingest data from AWS S3 bucke
 
 So in summary, the Transfer Service provides managed batch incremental loading, streaming insert allows real-time increments via Cloud Functions, and Beam gives code-based control.
 
+
+# How does Databricks Data Intelligence Platform compare with that of BigQuery and Snowflake?
+Here's a high-level comparison between Databricks and BigQuery/Snowflake data platforms:
+
+Infrastructure:
+
+- Databricks is based on open-source Spark and offers flexibility to deploy on public clouds, private cloud, or on-prem.
+
+- BigQuery and Snowflake are proprietary cloud-native platforms only available on public clouds.
+
+Processing: 
+
+- Databricks uses Spark SQL and DataFrames for distributed data processing.
+
+- BigQuery and Snowflake use proprietary SQL query engines optimized for performance.
+
+Scaling:
+
+- Databricks auto-scales Spark clusters up and down based on workload. 
+
+- BigQuery and Snowflake scale compute fully automatically without any cluster management.
+
+Performance:
+
+- Databricks offers fast performance by caching data in memory across clusters.
+
+- BigQuery and Snowflake often benchmark as faster at scale due to architectural optimizations.
+
+Pricing: 
+
+- Databricks charges for clusters by time used, with ETL and ML add-ons.
+
+- BigQuery by data processed, Snowflake by credits for compute usage.
+
+Workloads:
+
+- Databricks is optimized for ETL, ad-hoc analytics and machine learning. 
+
+- BigQuery and Snowflake focus primarily on analytics and BI workloads.
+
+In summary, Databricks provides greater flexibility whereas BigQuery and Snowflake are optimized for analytics at massive scale. Each can excel in the right use cases.
