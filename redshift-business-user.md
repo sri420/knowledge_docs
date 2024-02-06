@@ -243,4 +243,30 @@ Cons:
 In summary, Redshift Data API adds a secure abstraction layer and controls direct exposure of database from BI tools. This improves security and access controls but adds additional complexity. The performance overhead and cost should be evaluated especially for highly concurrent workloads.
 
  
+ 
+#  What is Tableau's Live Query feature and when to use them?
+ Tableau's Live Query allows interactive, fast queries directly against data sources like Amazon Redshift without needing to import or extract the data. Some key aspects:
+
+1. Low Latency Dashboards: Live Queries provide near real-time access to results as users interact and visualize data.
+
+2. Scalable Analytics: Tableau pushes filters, aggregations, computations down to Redshift. Redshift processes and leverages its MPP architecture before returning results.
+
+3. Up-to-date data: No need for extracts or cubes. Analysis always runs on fresh data in database.
+
+4. Query Optimization: Tableau's native query generators and optimizers enable efficient queries tuned based on underlying data platforms. 
+
+When to use Live Query:
+
+- When sub-second response times are needed for interactive dashboards and drilling
+
+- To avoid overhead/latency of extract refreshes for real-time data
+
+- For very large datasets where extract creation is expensive or infeasible 
+
+- When underlying data changes frequently and extracts would be stale
+
+- When leveraging Redshift's query performance and scalability for transform heavy workloads
+
+So in summary, Live Query provides flexibility to enable both real-time analysis directly on databases like Redshift while also allowing extracts and in-memory cubes for performance.
+
 
