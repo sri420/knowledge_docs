@@ -269,4 +269,43 @@ When to use Live Query:
 
 So in summary, Live Query provides flexibility to enable both real-time analysis directly on databases like Redshift while also allowing extracts and in-memory cubes for performance.
 
+# What is Tableau Ask Data. Can business users use it to access data from Redshift DB.
+Tableau Ask Data is a natural language interface in Tableau that allows business users to query and analyze data easily just by typing questions in plain conversational English, rather than writing SQL statements or formulas.
 
+Some key highights of how business users can leverage Tableau Ask Data with Amazon Redshift:
+
+- Simple questions like "what were the sales last month?" or "which are my top 5 products by revenue" can be directly typed.
+
+- Behind the scenes, Ask Data converts the natural language questions into formal database queries.
+
+- Supports data from various sources including Amazon Redshift, so can directly query tables/views in the cluster. 
+
+- Leverages machine learning & heuristics to better interpret context and intent within questions to translate to efficient queries.
+
+- Allows easy data exploration without SQL skills. Recommends visualizations to answer questions. 
+
+- Secure access as permissions can be set on underlying Redshift data sources.
+
+So in summary, Tableau Ask Data empowers business teams to harness data in Amazon Redshift easily using natural questions without SQL coding or query skills - enabling self-service analytics in a governed manner.
+
+# Is Tableau Ask Data a premium feature. How does it work? Does it use any AWS AI /Gen AI features. What is the pricing for it.
+
+Yes, Tableau's Ask Data capability that enables natural language queries is a premium feature with the following details on how it works and pricing:
+
+1. Powered by Tableau's proprietary NLQ (Natural Language Query) engine 
+
+2. No dependency or integration with AWS AI services like Comprehend. It is Tableau's own NLP and ML capability.
+
+3. Works across all underlying data sources – file-based, SQL databases, cloud data platforms etc.
+
+4. Translates questions to optimized SQL or analytical expressions  
+
+5. Available with Tableau CRM and Explorer SKUs (highest pricing tiers)
+
+6. Also need additional Ask Data Licensing for each user needing the feature.
+
+7. Ask Data license is $12 per user/month with annual contracts when purchased with Explorer.
+
+8. So total cost will be Tableau Explorer user license + Ask Data add-on license per user 
+
+In summary, Ask Data provides intuitive analytics through conversational interface leveraging Tableau's NLQ technology. It carries a price premium on top of highest Tableau edition licenses making it relevant for business teams needing intuitive self-service analytics.
