@@ -1,7 +1,8 @@
+```sh
 %pip install transformers
 %pip install sentence-transformers
 %pip install scikit-learn
-
+```
 ```python
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
