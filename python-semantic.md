@@ -2,7 +2,7 @@
 %pip install sentence-transformers
 %pip install scikit-learn
 
-
+```python
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 model = SentenceTransformer('all-MiniLM-L6-v2') 
@@ -29,8 +29,10 @@ embeddings=[embedding1,embedding2,embedding3,embedding4,embedding5,embedding6,em
 sim = cosine_similarity(embeddings)
 print(sim)
 print("Similarity score:", sim[0][0])
+```
 
 
+```python
 import pandas as pd
 
 df1 = pd.read_csv("source1.csv") 
@@ -58,5 +60,5 @@ indices = np.argmax(similarity, axis=1)
 for i in range(len(indices)):
   print(source1_name_field[i], source2_customer_field[indices[i]])
 
-
+```
   
