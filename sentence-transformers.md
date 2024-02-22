@@ -1,6 +1,6 @@
 # How do I use sentence transformers model in python to do link customer records from 2 excel files FileA and FileB based on semantic matching between the fields in respective excel files.
 
-Sure, I can guide you on how to use the Sentence Transformers model in Python for semantic matching. Here's a step-by-step guide:
+Step-by-step guide:
 
 1. **Install the necessary libraries**. You'll need pandas for handling Excel files, and sentence_transformers for semantic matching.
 
@@ -53,11 +53,6 @@ linked_records = fileA.assign(linked_record=fileB.iloc[most_similar_indices].res
 
 This will give you a DataFrame where each record in FileA is linked to the most semantically similar record in FileB.
 
-Please replace `'FileA.xlsx'`, `'FileB.xlsx'`, and `'field_to_match'` with your actual file names and field names. Also, ensure that the Sentence Transformer model you're using is appropriate for your specific use case. Different models may yield different results. 
-
-Remember, this is a simple example and real-world scenarios might require additional preprocessing or postprocessing steps. For instance, you might need to handle missing values, normalize text, or set a threshold for similarity scores to consider a match. 
-
-I hope this helps! Let me know if you have any other questions. 😊
 
 
 # Do I have to repeat this process for each set of fields I want to compare in both the excel files.
@@ -109,15 +104,7 @@ linked_records = fileA.assign(linked_record=fileB.iloc[most_similar_indices].res
 
 In this line, `assign` is creating a new column `linked_record` in the DataFrame `fileA`. The values for this new column are determined by `fileB.iloc[most_similar_indices].reset_index(drop=True)`, which selects the records from `fileB` that have the highest semantic similarity to each record in `fileA`.
 
-I hope this helps! Let me know if you have any other questions. 😊.
 
-Source: Conversation with Bing, 2/22/2024
-(1) pandas.DataFrame.assign — pandas 2.2.0 documentation. https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.assign.html.
-(2) Pandas DataFrame assign () Method | Create new Columns in DataFrame. https://www.geeksforgeeks.org/pandas-dataframe-assign/.
-(3) Comprehensive Guide to Adding Columns in Pandas DataFrames with assign .... https://llego.dev/posts/pandas-adding-columns-assign-python/.
-(4) Pandas Assign New Columns to a DataFrame - PythonForBeginners.com. https://www.pythonforbeginners.com/basics/pandas-assign-new-columns-to-a-dataframe.
-(5) Pandas assign() - Programiz. https://www.programiz.com/python-programming/pandas/methods/assign.
-(6) en.wikipedia.org. https://en.wikipedia.org/wiki/Pandas_(software).
 
 
 # What is the usage of tensors in the provided python code. Why we need them?
@@ -143,7 +130,7 @@ No, you don't need to install PyTorch separately. When you install the `sentence
 pip install sentence_transformers
 ```
 
-After running this command, both `sentence_transformers` and `PyTorch` should be available for use in your Python environment. I hope this helps! Let me know if you have any other questions. 😊
+After running this command, both `sentence_transformers` and `PyTorch` should be available for use in your Python environment. 
 
 # If I do comparision with each and every pair of fields and get linked_records_1, linked_records_2 and so on, how do I combine them to see if I have identified and linked the records from excel files are not.
 
@@ -162,9 +149,7 @@ In this code, `'common_field'` should be replaced with the name of a field that 
 
 This will give you a combined DataFrame where each record is linked to the most semantically similar record from each field comparison.
 
-Please note that this is a simple example and real-world scenarios might require additional steps or considerations. For instance, you might need to handle cases where there is no match found, or where multiple records from one file match to the same record in the other file.
 
-I hope this helps! Let me know if you have any other questions. 😊
 
 
 # Should the data be cleaned or pre-processed before using the sentence transformers model library?
@@ -217,7 +202,7 @@ fileB['field_to_match'] = fileB['field_to_match'].apply(preprocess_text)
 
 Please note that the appropriate preprocessing steps can depend on your specific use case. For example, in some cases, punctuation or capitalization may carry important meaning and should be preserved. Always consider the characteristics of your data and the requirements of your task when deciding on preprocessing steps.
 
-I hope this helps! Let me know if you have any other questions. 😊
+
 
 # If I have addresses field in both the files and if they are in a different format, will the comparision using sentence transformers actually find the matching records (OR) should I standardize the addresses to some standard/common format and then do the comparison for the address fields
 
@@ -254,7 +239,7 @@ fileB['address'] = fileB['address'].apply(standardize_address)
 
 Please note that the `usaddress` library is specific to U.S. addresses. If your addresses are from a different country, you may need to use a different library or service for address standardization.
 
-I hope this helps! Let me know if you have any other questions. 😊
+
 
 # Can you provide some more details on the tag method and also what is the need of address_type field
 
@@ -352,8 +337,7 @@ Replace `'field1'`, `'field2'`, and `'field3'` with the fields you want to consi
 
 5. **Indexing**: For very large datasets, you might consider using an approximate nearest neighbor search algorithm, which can provide significant speedups compared to brute force comparison. Libraries like `FAISS`, `Annoy`, or `NMSLib` can be used for this purpose.
 
-Remember, these are just general strategies and might need to be adapted based on your specific use case and data. I hope this helps! Let me know if you have any other questions. 😊
-
+Remember, these are just general strategies and might need to be adapted based on your specific use case and data.
 
 # What is the indexing strategy ? We get a similarity score for compared fields from both files and based on the max value we identify and link records. How can indexing help here?
 
