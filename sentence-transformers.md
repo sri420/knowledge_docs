@@ -265,16 +265,7 @@ As you can see, the `tag` method has split the address into its components (like
 
 The `address_type` field is used to categorize the type of address. For example, it could be a 'Street Address', 'Intersection', 'PO Box', etc. This can be useful in applications where you need to know not just the components of the address, but also the type of address.
 
-I hope this helps! Let me know if you have any other questions. 😊
 
-Source: Conversation with Bing, 2/22/2024
-(1) usaddress · PyPI. https://pypi.org/project/usaddress/.
-(2) Usaddress - Open Source Agenda. https://www.opensourceagenda.com/projects/usaddress.
-(3) GitHub - datamade/usaddress: :us: a python library for parsing .... https://github.com/datamade/usaddress.
-(4) usaddress - Parserator. https://parserator.datamade.us/usaddress/.
-(5) Variable Definitions — dedupe 2.0.17 documentation. https://docs.dedupe.io/en/latest/Variable-definition.html.
-(6) Address Compound Fields | Object Reference for the Salesforce Platform .... https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/compound_fields_address.htm.
-(7) Commonly used address locator styles—ArcMap | Documentation - Esri. https://desktop.arcgis.com/en/arcmap/latest/manage-data/geocoding/commonly-used-address-locator-styles.htm.
 
 # Does the mean I have to parse the address fields from respective excel files and then encode them to generate the embeddings and then use cosine_similarity to see how much they are matching or not.
 Yes, that's correct. Here's a step-by-step breakdown of the process:
