@@ -8,21 +8,23 @@ if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
     select_all = st.checkbox("Select All")
 
+    # Add a new column for checkboxes
+    df['Select'] = False
+
     # Display the entire CSV file as a table with selection option
-    edited_df = st.data_editor(df, use_container_width=True)
+    edited_df = st.data_editor(df, use_container_width=True, editable=True)
 
     if select_all:
-        selected_rows = edited_df.index.tolist()
+        edited_df['Select'] = True
     else:
-        selected_rows = edited_df.index[edited_df.iloc[:, 0]].tolist()
-
-    selected_df = edited_df.loc[selected_rows]
+        selected_rows = edited_df.index[edited_df['Select']].tolist()
+        selected_df = edited_df.loc[selected_rows]
 
     st.write("Selected Rows:")
-    st.write(selected_df)
+    st.write(selected_df.drop('Select', axis=1))  # Drop the 'Select' column before displaying
 
     if st.button("Export Selected Rows"):
-        csv = selected_df.to_csv(index=False)
+        csv = selected_df.drop('Select', axis=1).to_csv(index=False)
         st.download_button(
             label="Download CSV",
             data=csv,
