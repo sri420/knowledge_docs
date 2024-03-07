@@ -29,3 +29,15 @@ select_all = st.checkbox("Select All", key="select_all")
 
 # Render the DataFrame
 edited_df = st.data_editor(df, use_container_width=True, num_rows_per_page=10)
+
+
+# Check the state of the select all checkbox
+if select_all:
+    # Select all rows
+    edited_df = edited_df.assign(is_selected=True)
+else:
+    # Deselect all rows
+    edited_df = edited_df.assign(is_selected=False)
+
+# Display the updated DataFrame
+st.data_editor(edited_df, use_container_width=True, num_rows_per_page=10)
