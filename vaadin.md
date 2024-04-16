@@ -1,4 +1,4 @@
-To create a UI app using Vaadin Flow, you can follow these steps:
+# Create a UI app using Vaadin Flow, you can follow these steps:
 
 First, you need to set up a new project. You can use Maven to do this. Create a new Maven project and add the Vaadin BOM and Flow dependencies to your pom.xml file.
 
@@ -44,6 +44,7 @@ Open a web browser and navigate to localhost:8080 to see your application.
 
 mvn spring-boot:run
 
+# Add Components to UI
 
 In Vaadin Flow, you can add components to your UI by calling the add method on the layout object. Here's an example of how you can add a button and a text field to your UI:
 
@@ -75,6 +76,7 @@ add(horizontalLayout);
 This will display the text field and the button side by side, instead of on top of each other.
 
 #
+# Handle User Inputs using Listeners
 
 In Vaadin Flow, you can handle user input by adding listeners to your components. These listeners will be triggered when the user interacts with the component in a certain way.
 
@@ -103,7 +105,7 @@ You can add listeners to any component that extends Component, and there are man
 
 ##
 
-
+# Display Notification
 In Vaadin Flow, you can display a notification by using the Notification class. Here's an example of how you can show a notification when a button is clicked:
 
 
@@ -128,6 +130,7 @@ The Notification.show method is a static method that creates and shows a new not
 
 ###
 
+# Validate User Inputs using Binder class
 
 In Vaadin Flow, you can validate user input by using the Binder class. Here's an example of how you can validate a TextField to ensure that it's not empty:
 
@@ -164,6 +167,7 @@ public class MainView extends VerticalLayout {
 
 ###
 
+# Create ConfirmationDialog Box
 In Vaadin Flow, you can use the Dialog class to create a confirmation dialog. Here's an example:
 
 
@@ -200,6 +204,7 @@ public class MainView extends VerticalLayout {
 
 ###
 
+# Create Multiple Views in Multiple Classes
 
 In Vaadin Flow, you can create multiple views by creating multiple classes that extend a layout class (like VerticalLayout or HorizontalLayout) and annotating them with the @Route annotation. The value you provide to the @Route annotation determines the URL path for that view.
 
@@ -246,6 +251,7 @@ In this example, when the button is clicked, the application navigates to View2.
 
 
 ###
+# Vaadin Base or Home Page View
 
 Yes, in Vaadin Flow, you can create a base view or home page view and integrate all other views from there. You can use the @Route("") annotation to specify the base view that should be displayed when the application is accessed from the root URL.
 
@@ -275,7 +281,7 @@ When the application is accessed from the root URL, the MainView will be display
 
 ###
 
-Pass Data Between views
+# Pass Data Between views
 
 In Vaadin Flow, you can pass data between views using parameters in the URL. You can define a view to accept parameters by implementing the HasUrlParameter interface in your view class. The setParameter method will be called when the view is navigated to with a parameter.
 
@@ -356,6 +362,7 @@ public class MainView extends VerticalLayout {
 }
 
 ###
+# Binder Server Side Validation
 
 When using binder, it is basically server side validation. When the page is submitted, validations happen in server and then messages are sent to the client. Wouldn't that impact the performance and latency of responses.
 
@@ -507,7 +514,7 @@ public class MainView extends VerticalLayout {
 ###
 
 
-Add Event handling Code for Navigation Button when using Pagination
+# Add Event handling Code for Navigation Button when using Pagination
 
 In Vaadin Flow, you can add event handling code to a button using the addClickListener method. This method takes a ComponentEventListener as an argument, which is a functional interface that represents the listener for an event. You can use a lambda expression or a method reference as the listener.
 
@@ -603,7 +610,7 @@ Note that sorting works out of the box with in-memory data, as in this example. 
 
 
 ###
-Using DataProvider to provide data in a Grid
+# Using DataProvider to provide data in a Grid
 
 A DataProvider in Vaadin is an abstraction for data access. It's used to fetch and manipulate data in a uniform way, regardless of the data source. This can be an in-memory collection, a database, a REST API, etc.
 
@@ -1041,7 +1048,7 @@ This is a typical structure for a Vaadin Flow project, but the exact structure c
 
 #
 
-Does Vaadin Support Modal Windows
+# Does Vaadin Support Modal Windows
 
 Yes, Vaadin does support modal windows. In Vaadin, a modal window is represented by the Dialog component.
 
@@ -1075,7 +1082,7 @@ In this example, a Button is created with a click listener that opens a Dialog. 
 
 
 ###
-Is it possible to add a form with different fields inside a modal dialog.
+# Is it possible to add a form with different fields inside a modal dialog.
 
 Yes, it's absolutely possible to add a form with different fields inside a modal dialog in Vaadin. Here's an example of how you can do it:
 
@@ -1119,7 +1126,7 @@ In this example, a FormLayout is created with two TextField components for the n
 When you run this application and click the "Open modal window" button, a modal window with a form will open. When you click the "Save" button, the dialog will close. You can add your own logic to handle the save action.
 
 ###
-How can I handle user input validation in a form inside a modal dialog in Vaadin?
+# How can I handle user input validation in a form inside a modal dialog in Vaadin?
 
 In Vaadin, you can use the Binder class to handle user input validation. The Binder class allows you to bind data fields from a model to fields in a form, and it provides methods for validating and saving the data.
 
@@ -1274,7 +1281,7 @@ In this example, the UserFormDialog class extends Dialog and contains the form a
 ###
 
 
-If I want to pass some data to Dialog to be rendered in the form from Main View , how can I do that.
+# If I want to pass some data to Dialog to be rendered in the form from Main View , how can I do that.
 
 
 You can pass data to the UserFormDialog by adding a method to the dialog that accepts the data and updates the form fields. Here's how you can do it:
@@ -1371,8 +1378,9 @@ public class UserFormDialog extends Dialog {
     }
 }
 
-GitHub Copilot
-To handle form submission and retrieve the form data from the dialog, you can add a callback function to the UserFormDialog that gets called when the form is submitted. Here's how you can do it:
+
+# To handle form submission and retrieve the form data from the dialog, you can add a callback function to the UserFormDialog that gets called when the form is submitted. 
+Here's how you can do it:
 
 First, modify the UserFormDialog class to accept a callback function:
 
@@ -1396,8 +1404,8 @@ public class MainView extends VerticalLayout {
     }
 }
 
-GitHub Copilot
-To handle form submission and retrieve the form data from the dialog, you can add a callback function to the UserFormDialog that gets called when the form is submitted. Here's how you can do it:
+
+# To handle form submission and retrieve the form data from the dialog, you can add a callback function to the UserFormDialog that gets called when the form is submitted. Here's how you can do it:
 
 First, modify the UserFormDialog class to accept a callback function:
 
@@ -1444,7 +1452,7 @@ In this example, the Notification is shown in the top center of the page. The No
 
 ### 
 
-When validation fails when using binder, how are the messages shown to the user?
+# When validation fails when using binder, how are the messages shown to the user?
 
 When using the Binder class in Vaadin for form validation, if validation fails, the error messages are displayed next to the corresponding form fields.
 
@@ -1499,7 +1507,7 @@ In this example, the grid has two additional columns. The first column displays 
 
 ###
 
-How do I select rows in a vaadin grid.
+# How do I select rows in a vaadin grid.
 
 In Vaadin, you can select rows in a Grid by using the setSelectionMode method of the Grid class. Here's an example:
 
@@ -1532,7 +1540,7 @@ In this example, the selection mode of the grid is set to SelectionMode.SINGLE, 
 
 ### 
 
-How can I customize the appearance of selected rows in a Vaadin Grid?
+# How can I customize the appearance of selected rows in a Vaadin Grid?
 
 You can customize the appearance of selected rows in a Vaadin Grid by using CSS. Vaadin Grid adds a selected class to the selected rows, so you can use this class to style the selected rows.
 
