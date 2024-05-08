@@ -11,6 +11,57 @@ Azure Account
     All user accounts are associated with either a Microsoft Account or Organizational Account(Microsoft Entra ID)
 
 
+
+
+**Azure Accounts and Subscriptions:**
+- An **Azure account** is a global unique entity that gets you access to Azure services and your Azure subscriptions¹. It is associated with an email address provided when creating the Azure subscription³.
+- An **Azure subscription** is a logical container for your resources³. You can create multiple subscriptions in your Azure account to create separation for billing or management purposes¹. Each Azure resource is associated with only one subscription³.
+- Azure subscriptions are linked to an Azure account and serve as a single billing unit for Azure resources used in that account⁴.
+
+**AWS Accounts:**
+- An **AWS account** is a single sign-in identity that has permissions to access AWS services⁵. AWS accounts have their own resources and contact information, and can be used to control access to AWS services⁵.
+- AWS Identity and Access Management (IAM) allows you to create multiple users and manage the permissions for each of these users within your AWS account⁵.
+- AWS also provides consolidated billing for multiple AWS accounts, allowing you to receive one bill for multiple AWS accounts, with cost breakdowns for each account⁵.
+
+**Key Differences:**
+- In Azure, you can create multiple subscriptions under one account, and each subscription can have different billing and management settings. In AWS, you have one account and you manage resources and permissions under that account.
+- Azure uses the concept of subscriptions as a way to manage resources and billing, whereas AWS does not have a direct equivalent. Instead, AWS relies on IAM for user and resource management, and consolidated billing for handling costs across multiple accounts.
+
+
+
+In **Azure**, you first create an **Azure account**. Once the account is set up, you can then create one or more **Azure subscriptions** within that account. Each subscription is a separate billing entity and can contain different resources. This allows for more granular control over resource usage and billing.
+
+On the other hand, in **AWS**, you create an **AWS account**, and that's typically sufficient for most purposes. You can manage resources and permissions within that account using AWS Identity and Access Management (IAM). If you need to separate billing or manage resources across different business units, you might create multiple AWS accounts and consolidate the billing.
+
+So, in summary, both Azure accounts and subscriptions are needed to use Azure services, while in AWS, an account is usually enough. 😊
+
+
+------
+| Column 1 | Column 2 | Column 3 |
+| -------- | -------- | -------- |
+| Row 1    | Data     | Data     |
+| Row 2    | Data     | Data     |
+
+Yes, Azure has a similar concept known as **Azure Management Groups**³.
+
+Just like AWS Organizations allow you to manage multiple AWS accounts, **Azure Management Groups** provide a way to manage your Azure subscriptions³. If your organization has many subscriptions, you can organize them into management groups. These groups help you manage access, policies, and compliance for those subscriptions³.
+
+So, in summary, while AWS uses AWS Organizations to manage multiple AWS accounts, Azure uses Azure Management Groups to manage multiple Azure subscriptions. I hope this answers your question! 😊
+
+
+Microsoft Entra ID, formerly known as Azure Active Directory (Azure AD), is a cloud-based identity and access management service¹². It's used by your employees to access external resources such as Microsoft 365, the Azure portal, and thousands of other SaaS applications². It also helps them access internal resources like apps on your corporate intranet, and any cloud apps developed for your own organization².
+
+Here are some key features of Microsoft Entra ID:
+- **Unified Identity Management**: Manage all your identities and access to all your applications in a central location, whether they’re in the cloud or on-premises¹.
+- **Secure Adaptive Access**: Protect access to resources and data using strong authentication and risk-based adaptive access policies without compromising user experience¹.
+- **Seamless User Experiences**: Provide a fast, easy sign-in experience across your multicloud environment to keep your users productive, reduce time managing passwords, and increase productivity¹.
+- **App Integrations and Single Sign-On (SSO)**: Connect your workforce to all your apps, from any location, using any device. Simplify app access from anywhere with single sign-on¹.
+- **Multicloud Identity and Access Management**: Microsoft Entra ID is an integrated cloud identity and access solution, and a leader in the market for managing directories, enabling access to applications, and protecting identities¹.
+
+The name change to Microsoft Entra ID represents the evolution and unification of the Microsoft Entra product family, and a commitment to simplify secure access experiences for everyone⁴. I hope this helps! 😊
+
+
+----
 Compute Service on AWS and Azure
 --------------------------------
 AWS EC2                             Azure VM
