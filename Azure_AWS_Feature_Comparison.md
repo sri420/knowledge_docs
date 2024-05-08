@@ -91,6 +91,14 @@ AWS Auto Scaling                    Virtual Machine Scale Sets/ App Service Auto
                                     Autoscale Azure App Service applications.
 
 
+| AWS                | Azure                            | Details                                 |
+|-------------------- |-------------------------------- |-----------------------------------------|
+|AWS Auto Scaling     | Virtual Machine Scale Sets      |  Deploy and manage identical sets of VMs|
+|                     |                                 |  Number of sets can autoscale            |
+|                     | App Service Auto Scale         |  Autoscale Azure App Service applications|
+
+
+
 Batch Processing
 ----------------
 AWS Batch                           Azure Batch
