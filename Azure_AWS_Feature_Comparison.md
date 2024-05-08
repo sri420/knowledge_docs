@@ -36,11 +36,6 @@ On the other hand, in **AWS**, you create an **AWS account**, and that's typical
 So, in summary, both Azure accounts and subscriptions are needed to use Azure services, while in AWS, an account is usually enough. 😊
 
 
-------
-| Column 1 | Column 2 | Column 3 |
-| -------- | -------- | -------- |
-| Row 1    | Data     | Data     |
-| Row 2    | Data     | Data     |
 
 Yes, Azure has a similar concept known as **Azure Management Groups**³.
 
@@ -82,20 +77,12 @@ Create, manage, operate, and optimize HPC and large compute clusters of any scal
 
 AutoScaling
 -----------
-AWS Auto Scaling                    Virtual Machine Scale Sets/ App Service Auto Scale
-                                    Deploy and manage identical sets of VMs
-                                    Number of sets can autoscale.
 
-
-                                    App Service Auto Scale
-                                    Autoscale Azure App Service applications.
-
-
-| AWS                | Azure                            | Details                                 |
-|-------------------- |-------------------------------- |-----------------------------------------|
-|AWS Auto Scaling     | Virtual Machine Scale Sets      |  Deploy and manage identical sets of VMs|
+| AWS                 | Azure                           | Details                                  |
+|---------------------|-------------------------------- |------------------------------------------|
+|  AWS Auto Scaling   | Virtual Machine Scale Sets      |  Deploy and manage identical sets of VMs |
 |                     |                                 |  Number of sets can autoscale            |
-|                     | App Service Auto Scale         |  Autoscale Azure App Service applications|
+|                     | App Service Auto Scale          |  Autoscale Azure App Service applications|
 
 
 
