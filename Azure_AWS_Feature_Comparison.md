@@ -73,6 +73,12 @@ move VMware vSphere-based workloads and environments to the cloud
 AWS Parallel Cluster                Azure CycleCloud
 Create, manage, operate, and optimize HPC and large compute clusters of any scale.
 
+| AWS                  | Azure                 |           Details                                                                                              |
+| -------------------  | ----------------------| ----------------------------------------------------------------------------------------------------------     |
+| AWS EC2              |  Azure VM             |   On-demand bill per second, similar instance categories but exact RAM,CPU and Storage capabilities differ     |
+|VMWare Cloud on AWS   | Azure VMWare Solution |   move VMware vSphere-based workloads and environments to the cloud                                            |
+| AWS Parallel Cluster |  Azure CycleCloud     |   Create, manage, operate, and optimize HPC and large compute clusters of any scale                            |
+
 
 AutoScaling
 -----------
