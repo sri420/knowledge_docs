@@ -18,7 +18,7 @@ Moving from AWS Glue to Azure offers several options, depending on your specific
 When transitioning, consider factors like data migration, compatibility with existing workflows, cost implications, and the availability of required features in the Azure services you choose. Additionally, ensure thorough testing and validation to minimize disruptions during the migration process.
 
 
-Do you mean existing glue jobs can be migrated to azure with minimal changes
+## Do you mean existing glue jobs can be migrated to azure with minimal changes
 
 Migrating existing Glue jobs to Azure typically involves some level of modification, as the architecture and services in Azure may differ from those in AWS Glue. However, the extent of changes required depends on various factors such as the complexity of your Glue jobs, the specific Azure services you choose, and any dependencies on AWS-specific features.
 
@@ -38,7 +38,7 @@ Here are some steps you might follow when migrating Glue jobs to Azure:
 
 While migrating Glue jobs to Azure may require some effort, Azure provides equivalent or similar services to AWS Glue, making the transition feasible. Additionally, leveraging Azure's managed services can offer benefits such as scalability, integration with other Azure services, and potentially cost savings based on your usage patterns.
 
-Is there an equivalent for AWS step functions in azure cloud
+## Is there an equivalent for AWS step functions in azure cloud
 
 Azure doesn't have a direct equivalent to AWS Step Functions, but it offers similar capabilities through Azure Logic Apps and Azure Durable Functions:
 
