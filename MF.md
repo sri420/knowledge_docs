@@ -806,6 +806,84 @@ Use Apache Spark notebooks in Azure Databricks: https://learn.microsoft.com/en-u
 Connect Azure Databricks to ADLS Gen2: https://learn.microsoft.com/en-us/azure/databricks/connect/storage/tutorial-azure-storage
 By understanding these methods and considering your specific data and analytical needs, you can effectively query your data stored in Microsoft Fabric's OneLake data lakehouse.
 
+## How does Synapse Analytics work in a serverless way. When we query data, would it be brought up to query
+
+Azure Synapse Analytics offers a serverless option called **serverless SQL pool** for querying data. Here's how it works and how it differs from the traditional approach:
+
+**Traditional Synapse Analytics (Dedicated SQL Pools):**
+
+* **Provisioning:** You explicitly define the compute resources (cores and memory) for your Synapse workspace. These resources are always running, even when you're not actively querying data.
+* **Cost:** You pay for the provisioned resources regardless of usage, which can be less cost-effective for workloads with sporadic queries.
+* **Scalability:** Scaling compute resources up or down requires manual intervention.
+
+**Serverless SQL Pool in Synapse Analytics:**
+
+* **Provisioning:** You don't need to pre-provision compute resources. Serverless SQL pool automatically scales based on your query workload.
+* **Cost:** You only pay for the compute resources used when you run queries. This is ideal for ad-hoc queries or workloads with fluctuating query volume.
+* **Scalability:** Serverless SQL pool automatically scales compute resources up and down to meet your query demands, eliminating the need for manual intervention.
+
+**How Serverless SQL Pools Work:**
+
+1. **Submitting a Query:** When you submit a query to a serverless SQL pool, it triggers the automatic provisioning of compute resources in the background.
+2. **Resource Allocation:** Azure allocates compute resources (cores and memory) based on the complexity of your query.
+3. **Query Execution:** The allocated resources are used to execute your query on the underlying distributed storage system (typically ADLS or OneLake).
+4. **Resource Release:** Once the query finishes execution, the allocated resources are automatically released, reducing costs.
+
+**Data Movement for Queries:**
+
+* **Data Stays Put:** In both traditional and serverless options, the data itself typically **doesn't** move to the compute resources for querying.
+* **Processing Power Comes to Data:** Instead, the compute resources with processing power are dynamically allocated and brought closer to the data location (e.g., ADLS or OneLake) for efficient query execution. This optimizes data transfer and processing times.
+
+Here's an analogy:
+
+* Traditional Synapse Analytics (Dedicated Pools): Imagine renting a dedicated server (compute resources) 24/7, even if you only use it occasionally.
+* Serverless SQL Pool: Think of using a cloud-based service like Uber for compute resources. You only pay for the "ride" (query execution) when you need it, and the resources are automatically allocated and released based on your request.
+
+**Benefits of Serverless SQL Pool:**
+
+* **Cost-effective:** Ideal for unpredictable workloads or ad-hoc queries where you only pay for what you use.
+* **Simplified Management:** Automatic scaling eliminates the need for manual resource provisioning.
+* **Elasticity:** Scales seamlessly to handle spikes in query volume without user intervention.
+
+**Drawbacks of Serverless SQL Pool:**
+
+* **Limited Control:** You have less control over the underlying compute resources compared to dedicated pools.
+* **Cold Start Times:** For the first query after a period of inactivity, there might be a slight delay as resources are initially allocated. 
+
+**In conclusion, Synapse Analytics offers a serverless SQL pool option that provides a cost-effective and scalable way to query data in ADLS or OneLake. The data itself typically stays put, while compute resources are dynamically allocated and brought closer to the data for efficient query execution.** 
+
+
+## When using a Data Catalog like Azure Purview, how we do query the data stored in OneLake or in Synapse Analytics, do we directly access the tables or access them via the logical tables in Azure Purview.
+
+Azure Purview, the data catalog service within Microsoft Fabric, acts as a central registry for your data assets, but it doesn't directly replace how you access data stored in OneLake or Azure Synapse Analytics. Here's how Purview integrates with these data sources for querying:
+
+**Querying Approach:**
+
+* You **don't** query data directly through Purview. It doesn't store the actual data itself.
+* You continue to access tables in OneLake or Synapse Analytics using their native methods.
+
+**Purview's Role:**
+
+* **Discovery and Lineage:**  Purview helps you discover relevant data assets by providing a searchable catalog with detailed information about tables in OneLake and Synaapse Analytics. This includes lineage information, showing the origin and transformations applied to the data.
+* **Understanding Data:**  Purview enriches your understanding of the data through descriptions, tags, and classifications added by data owners. This context helps you determine if a particular table in OneLake or Synapse Analytics is suitable for your query.
+
+**Querying Workflows:**
+
+1. **Search and Identify Data:**  Use Purview's search functionalities to find relevant tables in OneLake or Synapse Analytics based on keywords, descriptions, or lineage information.
+2. **Access and Query the Data:**  Once you've identified the desired table, Purview provides links or instructions to access the data source directly. You then use the native querying tools within OneLake (potentially using notebooks) or Synapse Analytics (using SQL queries) to interact with the table and retrieve the data.
+
+**Benefits of this Approach:**
+
+* **Centralized Discovery:** Purview simplifies data discovery by providing a unified catalog for data assets across OneLake and Synapse Analytics.
+* **Improved Data Understanding:**  The enriched information in Purview helps you make informed decisions about which data to query based on its lineage and context.
+* **Maintains Native Functionality:**  You leverage the existing querying capabilities of OneLake and Synapse Analytics, ensuring optimal performance and access control mechanisms.
+
+**Here's an analogy:**
+
+Imagine Purview as a library catalog. It helps you find books (data assets) by title, author (data source), or subject (data description).  However, you don't read the books within the catalog itself. You  go to the bookshelf (OneLake or Synapse Analytics) and access the book (table) directly to read its content (query the data).
+
+**In essence, while Azure Purview doesn't directly handle data access for querying, it acts as a valuable bridge for discovering, understanding, and accessing your data assets stored in OneLake and Synapse Analytics.** 
+
 
 
 
