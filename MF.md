@@ -885,6 +885,56 @@ Imagine Purview as a library catalog. It helps you find books (data assets) by t
 **In essence, while Azure Purview doesn't directly handle data access for querying, it acts as a valuable bridge for discovering, understanding, and accessing your data assets stored in OneLake and Synapse Analytics.** 
 
 
+## I have workloads running Spark jobs on aws emr, Glue jobs , reading data from s3 and writing to Amazon redshift after transformations, Step functions amd Lam bda Functions to trigger Glue jobs. How can i migrate those from AWS to Azure and use microsoft fabric to ma age my workloads.
+
+Here's a breakdown of migrating your workloads from AWS to Azure and using Azure Databricks on Azure Fabric:
+
+**Data Storage:**
+
+* Migrate your data from S3 to Azure Data Lake Storage (ADLS). Azure offers various tools for data transfer, including AzCopy and Azure Data Factory. You can likely maintain the same file format for your Spark jobs.
+
+**Spark Jobs (EMR):**
+
+* Azure Databricks is a managed Spark service similar to EMR. You can import your existing Spark code (Python scripts) into a Databricks workspace.  Minimal changes might be required due to slight environment variations. 
+
+**AWS Glue Jobs:**
+
+* Azure Data Factory (ADF) is a cloud-based ETL/ELT service comparable to Glue. You can recreate your data transformation logic using ADF's visual interface or code. ADF supports various data sources, including ADLS (your migrated data).
+
+**Step Functions and Lambda Functions:**
+
+* Azure Functions can replace Lambda functions for triggering ADF pipelines. Azure Functions offer similar functionality with various triggers, including HTTP requests.
+* Azure Logic Apps is a serverless workflow automation service that can handle more complex orchestration needs similar to Step Functions. Logic Apps integrate with various Azure services and can trigger ADF pipelines.
+
+**Azure Databricks on Azure Fabric:**
+
+* Azure Databricks integrates seamlessly with Azure Fabric, a management plane for your Azure resources. You can provision, manage, and monitor Databricks clusters within Azure Fabric for a unified experience.
+
+**Migration Steps:**
+
+1. **Data Transfer:** Migrate your data from S3 to ADLS using AzCopy or ADF.
+2. **Databricks Workspace:** Create an Azure Databricks workspace and import your Spark code.
+3. **Azure Data Factory:** Design ADF pipelines to replicate your Glue job logic for data transformation.
+4. **Azure Functions/Logic Apps:** Create Azure Functions or Logic Apps to trigger ADF pipelines, replacing Step Functions and Lambda functions.
+5. **Databricks Cluster:** Provision Databricks clusters within Azure Fabric to run your Spark jobs.
+
+**Additional Considerations:**
+
+* **Security:**  Review and adapt your security configurations to align with Azure Active Directory and other Azure security services.
+* **Cost Optimization:** Explore Azure Databricks pricing models (consumption vs. committed) to optimize costs compared to EMR.
+* **Testing:** Thoroughly test your migrated workloads in Azure before transitioning entirely.
+
+**Microsoft Resources:**
+
+* Azure Databricks: [https://azure.microsoft.com/en-us/products/databricks](https://azure.microsoft.com/en-us/products/databricks)
+* Azure Data Factory: [https://learn.microsoft.com/en-us/azure/data-factory/](https://learn.microsoft.com/en-us/azure/data-factory/)
+* Azure Functions: [https://learn.microsoft.com/en-us/azure/azure-functions/functions-overview](https://learn.microsoft.com/en-us/azure/azure-functions/functions-overview)
+* Azure Logic Apps: [https://learn.microsoft.com/en-us/azure/logic-apps/logic-apps-overview](https://learn.microsoft.com/en-us/azure/logic-apps/logic-apps-overview)
+* Azure Data Lake Storage (ADLS): [https://azure.microsoft.com/en-us/products/storage/data-lake-storage](https://azure.microsoft.com/en-us/products/storage/data-lake-storage)
+* Azure Fabric: [https://learn.microsoft.com/en-us/azure/service-fabric/](https://learn.microsoft.com/en-us/azure/service-fabric/)
+
+
+
 
 
 
