@@ -12,11 +12,11 @@ df = pd.DataFrame({
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 # Create a list of dbc.Input components for each column in the DataFrame
-form_fields = [
-    dbc.Label(column),
-    dbc.Input(id=column, type="text")
-    for column in df.columns
-]
+# Create a list of dbc.Input components for each column in the DataFrame
+form_fields = []
+for column in df.columns:
+    form_fields.append(dbc.Label(column))
+    form_fields.append(dbc.Input(id=column, type="text"))
 
 # Create a dbc.Modal component and add the form fields to the body of the modal
 modal = dbc.Modal(
